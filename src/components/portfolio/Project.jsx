@@ -54,7 +54,7 @@ const Project = () => {
                 {projects.map((project, index) => (
                   <motion.div
                     key={project.title}
-                    className="rounded-xl overflow-hidden border border-gray-700 hover:border-cyan-400/30 transition-all"
+                    className="rounded-b-xl border border-gray-700 hover:border-cyan-400/30 transition-all"
                     initial={{ rotateY: 90, opacity: 0 }}
                     whileInView={{ rotateY: 0, opacity: 1 }}
                     viewport={{ once: true, margin: "-100px" }}
@@ -65,7 +65,7 @@ const Project = () => {
                       delay: index * 0.15,
                     }}
                   >
-                    <div className="h-48 overflow-hidden">
+                    <div className="h-48">
                       <img
                         src='project.png'
                         alt={project.title}

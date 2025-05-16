@@ -1,11 +1,8 @@
-import { useState } from "react"
-import CodeShowCase from "../components/CodeShowCase"
-import NotificationSystem from "../components/extra/NotificationSystem"
-import HomePage from "../components/HomePage"
-import Footer from "../components/layout/Footer"
-import Header from "../components/layout/Header"
-import Sidebar from "../components/layout/Sidebar"
-import { Outlet } from "react-router"
+import NotificationSystem from "../components/extra/NotificationSystem";
+import Footer from "../components/layout/Footer";
+import Header from "../components/layout/Header";
+import Sidebar from "../components/layout/Sidebar";
+import { Outlet } from "react-router";
 
 
 function App() {

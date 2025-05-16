@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { IoHomeOutline } from "react-icons/io5";
+import { BiMoviePlay } from "react-icons/bi";
+import { Link } from 'react-router';
 
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -25,14 +27,14 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`h-full backdrop-blur-2xl transition-all duration-400 ease-in-out flex-shrink-0
+      className={`transition-all duration-400 ease-in-out flex-shrink-0
         ${isCollapsed ? 'w-13' : 'w-50'}`}
     >
       {/* Sidebar Menu */}
       <nav className="py-3 p-1 overflow-y-scroll scroll">
         <ul className="space-y-2 ">
             <li>
-              <a href='movies'
+              <Link to='/'
                 className={`flex items-center w-full p-3 transition cursor-pointer hover:translate-x-0.5 active:translate-x-1 rounded-l-lg
                   hover:bg-blue-300 text-gray-700
                   ${isCollapsed ? 'justify-center' : ''}`}
@@ -41,7 +43,19 @@ const Sidebar = () => {
                 {!isCollapsed && (
                   <span className="ml-3">Home</span>
                 )}
-              </a>
+              </Link>
+            </li>
+            <li>
+              <Link to='/movies'
+                className={`flex items-center w-full p-3 transition cursor-pointer hover:translate-x-0.5 active:translate-x-1 rounded-l-lg
+                  hover:bg-blue-300 text-gray-700
+                  ${isCollapsed ? 'justify-center' : ''}`}
+              >
+                <BiMoviePlay size={20} />
+                {!isCollapsed && (
+                  <span className="ml-3">Movies</span>
+                )}
+              </Link>
             </li>
         </ul>
       </nav>

@@ -54,14 +54,14 @@ const About = () => {
                 developers.
               </p>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4 bg-gray-50 p-2 rounded">
                 <div>
                   <h4 className="font-medium text-gray-400">Name:</h4>
-                  <p>John Doe</p>
+                  <p>Mahadev Kumar</p>
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-400">Email:</h4>
-                  <p>john@example.com</p>
+                  <p>24je0035@iitism.ac.in</p>
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-400">Experience:</h4>
@@ -69,7 +69,7 @@ const About = () => {
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-400">Location:</h4>
-                  <p>San Francisco, CA</p>
+                  <p>IIT(ISM) Dhanbad, Jharkhand</p>
                 </div>
               </div>
             </motion.div>
