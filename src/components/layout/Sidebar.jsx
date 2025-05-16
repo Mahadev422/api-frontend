@@ -26,7 +26,7 @@ const Sidebar = () => {
   return (
     <div
       className={`h-full backdrop-blur-2xl transition-all duration-400 ease-in-out flex-shrink-0
-        ${isCollapsed ? 'w-13' : 'w-64'}`}
+        ${isCollapsed ? 'w-13' : 'w-50'}`}
     >
       {/* Sidebar Menu */}
       <nav className="py-3 p-1 overflow-y-scroll scroll">

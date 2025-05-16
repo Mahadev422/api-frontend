@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiCopy, FiCheck, FiGithub, FiExternalLink } from 'react-icons/fi';
+import { FiCopy, FiCheck } from 'react-icons/fi';
 import { codeData } from './data';
+import Github from './main/Github';
 
 const CodeShowCase = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -20,7 +21,7 @@ const CodeShowCase = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.4 }}
         className="max-w-5xl mx-auto"
       >
         {/* Header */}
@@ -86,9 +87,6 @@ const CodeShowCase = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={language}
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
               className="px-6 py-4 border-t border-gray-200"
             >
@@ -100,33 +98,15 @@ const CodeShowCase = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* Call to Action */}
-        <motion.div 
-          className="mt-12 text-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7 }}
-        >
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Ready to build something amazing?</h2>
-          <div className="flex justify-center gap-4">
-            <a
-              href="https://github.com/yourusername/your-repo"
-              className="flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FiGithub /> View on GitHub
-            </a>
-            <a
-              href="https://yourwebsite.com/docs"
-              className="flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FiExternalLink /> View Documentation
-            </a>
+        <div className="relative pm-2">
+          <span>Output</span>
+            <pre className="p-6 overflow-x-auto bg-gray-900 text-gray-100 text-sm">
+              <code>{code}</code>
+            </pre>
           </div>
-        </motion.div>
+
+        {/* Call to Action */}
+        <Github />
       </motion.div>
     </div>
   );
