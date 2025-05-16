@@ -1,46 +1,64 @@
-export const codeSnippets = {
-    javascript: `import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { SiJavascript, SiPython, SiAxios } from 'react-icons/si';
 
-const AnimatedComponent = () => {
-  const [isActive, setIsActive] = useState(false);
+  export const codeData = [
+  {
+    language: 'javascript',
+    icon: SiJavascript,
+    code: `import { motion } from 'framer-motion';
 
-  return (
-    <motion.div
-      className="w-32 h-32 bg-indigo-600 rounded-lg cursor-pointer"
-      animate={{
-        scale: isActive ? 1.2 : 1,
-        rotate: isActive ? 360 : 0,
-      }}
-      transition={{ duration: 0.5 }}
-      onClick={() => setIsActive(!isActive)}
-    />
-  );
-};`,
-    python: `<div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
-  <div className="md:flex">
-    <div className="md:shrink-0">
-      <img className="h-48 w-full object-cover md:h-full md:w-48" src="/img.jpg" alt="Modern building" />
-    </div>
-    <div className="p-8">
-      <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Company retreats</div>
-      <a href="#" className="block mt-1 text-lg leading-tight font-medium text-black hover:underline">Incredible accommodation for your team</a>
-      <p className="mt-2 text-slate-500">Looking to take your team away on a retreat to enjoy awesome workspaces...</p>
-    </div>
+const Box = () => (
+  <motion.div
+    animate={{ scale: 1.2, rotate: 90 }}
+    transition={{ duration: 0.5 }}
+    className="w-32 h-32 bg-blue-500"
+  />
+);`,
+    description: {
+      title: 'React Component with State',
+      content:
+        'This example shows a React component using state and Framer Motion for animations. Clicking the div triggers an animation that scales and rotates the element.',
+    },
+  },
+  {
+    language: 'python',
+    icon: SiPython,
+    code: `# Tailwind CSS responsive card
+<div class="bg-white shadow-md rounded-lg p-4 md:flex">
+  <img src="image.jpg" class="w-full md:w-1/3 rounded-md" />
+  <div class="md:ml-6 mt-4 md:mt-0">
+    <h2 class="text-xl font-bold">Card Title</h2>
+    <p class="text-gray-600">This is a responsive card layout with Tailwind CSS.</p>
   </div>
 </div>`,
-    axios: `import { motion } from 'framer-motion';
+    description: {
+      title: 'Responsive Card with Tailwind',
+      content:
+        'A responsive card component built with Tailwind CSS. The layout changes from vertical to horizontal on medium screens and includes proper spacing and typography.',
+    },
+  },
+  {
+    language: 'axios',
+    icon: SiAxios,
+    code: `import { motion, AnimatePresence } from 'framer-motion';
 
-const FramerExample = () => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -20 }}
-    transition={{ duration: 0.5 }}
-    className="p-6 bg-white rounded-lg shadow-lg"
-  >
-    <h3 className="text-xl font-bold text-gray-800">Animated Card</h3>
-    <p className="mt-2 text-gray-600">This card animates in and out smoothly!</p>
-  </motion.div>
-);`
-  };
+const MyComponent = ({ show }) => (
+  <AnimatePresence>
+    {show && (
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        className="p-4 bg-white rounded-lg shadow"
+      >
+        Animated Content
+      </motion.div>
+    )}
+  </AnimatePresence>
+);`,
+    description: {
+      title: 'Framer Motion Animations',
+      content:
+        'This component demonstrates entry and exit animations using Framer Motion. The card fades in and slides up when mounting, and fades out while sliding up when unmounting.',
+    },
+  },
+];
