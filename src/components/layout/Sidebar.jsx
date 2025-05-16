@@ -32,7 +32,7 @@ const Sidebar = () => {
       <nav className="py-3 p-1 overflow-y-scroll scroll">
         <ul className="space-y-2 ">
             <li>
-              <a href='#'
+              <a href='movies'
                 className={`flex items-center w-full p-3 transition cursor-pointer hover:translate-x-0.5 active:translate-x-1 rounded-l-lg
                   hover:bg-blue-300 text-gray-700
                   ${isCollapsed ? 'justify-center' : ''}`}
